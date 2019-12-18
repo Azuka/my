@@ -18,8 +18,6 @@ with slow page loads. In Newrelic Lite (the free forever plan), I could tell tha
 select queries on a table over a 100 times per page load on average. Most of this code was written in 2010
 (my excuse, although not a very good one), and at a glance it wasn't easy to tell _where_ exactly the problem was, although I knew what it was: [ORM lazy loading in a loop](https://www.mehdi-khalili.com/orm-anti-patterns-part-3-lazy-loading).
 
-Here's a recent issue I fixed.
-
 Upgrading to the a pricier version of Newrelic was not an option. I had a local version of the application working with docker-compose: was there perhaps a solution I could run locally, while pinpointing the exact problem? There had to be.
 
 I tried:
