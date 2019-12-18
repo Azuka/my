@@ -1,8 +1,14 @@
 box: debian
 build:
   steps:
+    - install-packages:
+        packages: git ssh-client
+    - script:
+        name: initialize git submodules
+        code: |
+            git submodule update --init --recursive
     - arjen/hugo-build:
-        flags: --buildDrafts=true
+        flags: --buildDrafts=false
 deploy:
   steps:
     - install-packages:
