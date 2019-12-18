@@ -1,0 +1,27 @@
+baseURL = "https://azuka.github.io/"
+languageCode = "en-us"
+title = "Azuka"
+theme = "hugo-kiera"
+
+menu = "main"
+meta = "false"
+
+# Kiera config
+pygmentsCodeFences = true
+
+disqusShortname = "" #Disqus shortname
+googleAnalytics = "" #Google Analytics ID
+
+[author]
+    name = "Azuka"           #Author name
+    github = "Azuka"         #Github username
+    gitlab = "Azuka"         #Gitlab username
+    linkedin = "Azuka"       #LinkedIn username
+    # facebook = ""       #Facebook username
+    twitter = "zahymaka"        #Twitter username
+    # instagram = ""      #Instagram username
+    stackoverflow = "users/66688/zahymaka"  #StackOverflow username
+
+[params]
+    tagline = "I like to tinker with things"
+    customCSS = []  #Optional Customised CSS
