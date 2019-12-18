@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Azuka</title>
+    <link>https://azuka.github.io/tags/</link>
+    <description>Recent content in Tags on Azuka</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Dec 2019 07:58:36 -0800</lastBuildDate>
+    
+	<atom:link href="https://azuka.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>instrumentation</title>
+      <link>https://azuka.github.io/tags/instrumentation/</link>
+      <pubDate>Wed, 18 Dec 2019 07:58:36 -0800</pubDate>
+      
+      <guid>https://azuka.github.io/tags/instrumentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jaeger</title>
+      <link>https://azuka.github.io/tags/jaeger/</link>
+      <pubDate>Wed, 18 Dec 2019 07:58:36 -0800</pubDate>
+      
+      <guid>https://azuka.github.io/tags/jaeger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opencensus</title>
+      <link>https://azuka.github.io/tags/opencensus/</link>
+      <pubDate>Wed, 18 Dec 2019 07:58:36 -0800</pubDate>
+      
+      <guid>https://azuka.github.io/tags/opencensus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php</title>
+      <link>https://azuka.github.io/tags/php/</link>
+      <pubDate>Wed, 18 Dec 2019 07:58:36 -0800</pubDate>
+      
+      <guid>https://azuka.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
