@@ -26,9 +26,9 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        external_repository: azuka/azuka.github.io
-        publish_branch: master
         if: github.ref == 'refs/heads/master'
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           publish_dir: ./public
+          external_repository: azuka/azuka.github.io
+          publish_branch: master
