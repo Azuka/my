@@ -1,9 +1,9 @@
 ---
-title: "That Minor SNAFU With Go Types"
-date: 2020-02-28T09:42:14-08:00
+date: "2020-02-28T09:42:14-08:00"
 draft: false
 tags:
-  - go
+- go
+title: That Minor SNAFU With Go Types
 ---
 
 Today's specimen:

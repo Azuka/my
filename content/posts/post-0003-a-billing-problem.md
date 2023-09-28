@@ -1,9 +1,9 @@
 ---
-title: "A billing problem based on assumptions"
-date: 2021-05-23T08:38:40-07:00
+date: "2021-05-23T08:38:40-07:00"
 draft: false
 tags:
-  - sms
+- sms
+title: A billing problem based on assumptions
 ---
 
 My partner and I started [SingleSend](https://www.singlesend.com) a little over a year ago.

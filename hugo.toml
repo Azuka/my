@@ -2,8 +2,9 @@ baseURL = "https://azuka.github.io/"
 languageCode = "en-us"
 title = "Azuka"
 theme = "hugo-kiera"
+#theme = 'ananke'
 
-menu = "main"
+#menu = "main"
 meta = "false"
 
 # Kiera config
@@ -25,3 +26,6 @@ googleAnalytics = "" #Google Analytics ID
 [params]
     tagline = "I like to tinker with things"
     customCSS = []  #Optional Customised CSS
+
+[menus]
+    _merge = 'shallow'

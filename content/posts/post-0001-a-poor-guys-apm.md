@@ -1,12 +1,12 @@
 ---
-title: "A Poor Guy's Local PHP Apm"
-date: 2019-12-18T07:58:36-08:00
+date: "2019-12-18T07:58:36-08:00"
 draft: false
 tags:
-  - instrumentation
-  - opencensus
-  - jaeger
-  - php
+- instrumentation
+- opencensus
+- jaeger
+- php
+title: A Poor Guy's Local PHP Apm
 ---
 
 I've seen the benefits of instrumenting code for a very long time: with PHP, Go, Frontend Javascript, and more recently, NodeJS.

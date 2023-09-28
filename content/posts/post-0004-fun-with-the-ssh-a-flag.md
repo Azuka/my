@@ -1,10 +1,10 @@
 ---
-title: "Fun with php deployer and ssh"
-date: 2022-12-19T23:37:38-08:00
+date: "2022-12-19T23:37:38-08:00"
 draft: false
 tags:
-  - ssh
-  - deployerphp
+- ssh
+- deployerphp
+title: Fun with php deployer and ssh
 ---
 
 
