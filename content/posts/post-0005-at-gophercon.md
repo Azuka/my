@@ -600,7 +600,7 @@ I had a very sarcastic reply typed up almost immediately in Google Keep (for car
 > 
 > Azuka
 
-Well, this is where it all ends, and all these people, as well as GopherCon, can stop living rent-free in my end.
+Well, this is where it all ends, and all these people, as well as GopherCon, can stop living rent-free in my head.
 
 Oh, and here's the docker file that "attacked" the precious CTF server, because I'm still not buying that nonsense:
 
