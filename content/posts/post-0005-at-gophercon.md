@@ -405,7 +405,7 @@ Even that got me no reply, so I forwarded to the Google Open Source email addres
 
 This time I got a response:
 
-> From: Russ Cox <rsc@google.com>\
+> From: Russ Cox &lt;redacted_google.com&gt;\
 > Date: Mon, 4 Dec 2023 12:43:08 -0500\
 > Subject: conduct report re GopherCon\
 > To: &lt;redacted&gt;
@@ -428,7 +428,7 @@ to which I sent a reply.
 > Date: Mon, 4 Dec 2023 09:45:39 -0800\
 > Subject: Re: conduct report re GopherCon\
 > From: Azuka Okuleye &lt;redacted&gt;\
-> To: Russ Cox <rsc@google.com>
+> To: Russ Cox &lt;redacted_google.com&gt;
 > 
 > Hi Russ,
 > 
@@ -481,7 +481,7 @@ On March 20, I sent a follow-up email to Russ Cox, and got an out of office auto
 > Date: Wed, 20 Mar 2024 08:04:21 -0700\
 > Subject: Re: conduct report re GopherCon\
 > From: Azuka Okuleye &lt;redacted&gt;\
-> To: Russ Cox <rsc@google.com>
+> To: Russ Cox &lt;redacted_google.com&gt;
 >
 > Hi Russ,
 >
@@ -517,7 +517,7 @@ I was done being patient, and I wanted this done and gone, so I sent an email.
 
 My reply came in almost an hour later, which I didn't get to reply until I was on the plane headed home.
 
-> From: Russ Cox <rsc@google.com>\
+> From: Russ Cox &lt;redacted_google.com&gt;\
 > Date: Fri, 19 Apr 2024 12:10:24 -0400\
 > Subject: Re: [conduct] Re: Formal Complaint about GopherCON San Diego October
 > 28 2023\
@@ -562,7 +562,7 @@ I had a very sarcastic reply typed up almost immediately in Google Keep (for car
 > Subject: Re: [conduct] Re: Formal Complaint about GopherCON San Diego October
 > 28 2023\
 > From: Azuka Okuleye &lt;redacted&gt;\
-> To: Russ Cox <rsc@google.com>\
+> To: Russ Cox &lt;redacted_google.com&gt;\
 > Cc: opensource@google.com, conduct@golang.org
 > 
 > Hi Russ,
