@@ -10,22 +10,22 @@ meta = "false"
 # Kiera config
 pygmentsCodeFences = true
 
-disqusShortname = "" #Disqus shortname
-googleAnalytics = "" #Google Analytics ID
+disqusShortname = ""             #Disqus shortname
+googleAnalytics = "G-XGCYPWQ1NS" #Google Analytics ID
 
 [author]
-    name = "Azuka"           #Author name
-    github = "Azuka"         #Github username
-    gitlab = "Azuka"         #Gitlab username
-    linkedin = "Azuka"       #LinkedIn username
-    # facebook = ""       #Facebook username
-    twitter = "zahymaka"        #Twitter username
-    # instagram = ""      #Instagram username
-    stackoverflow = "users/66688/zahymaka"  #StackOverflow username
+name = "Azuka"     #Author name
+github = "Azuka"   #Github username
+gitlab = "Azuka"   #Gitlab username
+linkedin = "Azuka" #LinkedIn username
+# facebook = ""       #Facebook username
+twitter = "zahymaka" #Twitter username
+# instagram = ""      #Instagram username
+stackoverflow = "users/66688/zahymaka" #StackOverflow username
 
 [params]
-    tagline = "I like to tinker with things"
-    customCSS = []  #Optional Customised CSS
+tagline = "I like to tinker with things"
+customCSS = []                           #Optional Customised CSS
 
 [menus]
-    _merge = 'shallow'
+_merge = 'shallow'
