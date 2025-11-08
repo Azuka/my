@@ -1,0 +1,104 @@
+{{- /* Mermaid */ -}}
+
+{{- $mermaidBase := "" -}}
+{{- $mermaidElkBase := "" -}}
+{{- $useDefaultCdn := true -}}
+{{- with site.Params.mermaid.base -}}
+  {{- $mermaidBase = . -}}
+  {{- $useDefaultCdn = false -}}
+{{- end -}}
+
+{{- $mermaidJsAsset := "" -}}
+{{- with site.Params.mermaid.js -}}
+  {{- $mermaidJsAsset = . -}}
+{{- end -}}
+
+{{- $mermaidJsElkAsset := "" -}}
+{{- with site.Params.mermaid.elk -}}
+  {{- $mermaidJsElkAsset = . -}}
+{{- end -}}
+
+{{- /* If only js is set without base, use local asset loading */ -}}
+{{- if and $useDefaultCdn (ne $mermaidJsAsset "") -}}
+  {{- $useDefaultCdn = false -}}
+{{- end -}}
+
+{{- /* Set default CDN base if needed */ -}}
+{{- if $useDefaultCdn -}}
+  {{- $mermaidBase = "https://cdn.jsdelivr.net/npm/mermaid@latest/dist" -}}
+  {{- $mermaidElkBase = "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@latest/dist" -}}
+{{- end -}}
+
+{{- $isRemoteBase := or (strings.HasPrefix $mermaidBase "http://") (strings.HasPrefix $mermaidBase "https://") -}}
+{{- $minSuffix := cond hugo.IsProduction ".min" "" -}}
+
+
+{{- /* JS retrieval: get raw JS from either local asset or remote, then process */ -}}
+{{- if $isRemoteBase -}}
+  {{- $jsPath := cond (ne $mermaidJsAsset "") $mermaidJsAsset (printf "mermaid%s.js" $minSuffix) -}}
+  {{- $mermaidJsUrl := printf "%s/%s" $mermaidBase $jsPath -}}
+  {{- with try (resources.GetRemote $mermaidJsUrl) -}}
+    {{- with .Err -}}
+      {{- errorf "Could not retrieve Mermaid js file from %s. Reason: %s." $mermaidJsUrl . -}}
+    {{- else with .Value -}}
+      {{- with resources.Copy (printf "js/mermaid%s.js" $minSuffix) . -}}
+        {{- $mermaidJs := . | fingerprint -}}
+        <script defer src="{{ $mermaidJs.RelPermalink }}" integrity="{{ $mermaidJs.Data.Integrity }}" crossorigin="anonymous"></script>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- else if $mermaidJsAsset -}}
+  {{- with resources.Get $mermaidJsAsset -}}
+    {{- $mermaidJs := . | fingerprint -}}
+    <script defer src="{{ $mermaidJs.RelPermalink }}" integrity="{{ $mermaidJs.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{- else -}}
+    {{- errorf "Mermaid js asset not found at %q" $mermaidJsAsset -}}
+  {{- end -}}
+{{- end -}}
+
+<script type="module">
+    import elkLayouts from 'https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@latest/dist/mermaid-layout-elk.esm.min.mjs';
+    mermaid.registerLayoutLoaders(elkLayouts);
+    console.log({elkLayouts});
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Store original mermaid code for each diagram
+    document.querySelectorAll(".mermaid").forEach((el) => {
+      el.dataset.original = el.innerHTML;
+    });
+
+    const theme = document.documentElement.classList.contains("dark") ? "dark" : "default";
+    mermaid.initialize({ startOnLoad: true, theme: theme });
+    mermaid.registerIconPacks([
+      {
+        name: 'logos',
+        loader: () =>
+          fetch('https://unpkg.com/@iconify-json/logos@1/icons.json').then((res) => res.json()),
+      },
+      {
+        name: 'carbon',
+        loader: () =>
+          fetch('https://unpkg.com/@iconify-json/carbon@1/icons.json').then((res) => res.json()),
+      },
+    ]);
+
+    let timeout;
+    new MutationObserver(() => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        const theme = document.documentElement.classList.contains("dark") ? "dark" : "default";
+        document.querySelectorAll(".mermaid").forEach((el) => {
+          // Reset to original content, preserving HTML
+          el.innerHTML = el.dataset.original;
+          el.removeAttribute("data-processed");
+        });
+        mermaid.initialize({ startOnLoad: true, theme: theme });
+        mermaid.init();
+      }, 150);
+    }).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  });
+</script>
