@@ -517,6 +517,8 @@ I had a few things to do before even switching the deployment mechanism:
 All of these required bolstering the Codeception test suite to catch any regressions as well as to cover affected code
 paths. We went from about 350 tests to ~680.
 
+All of these were released early and often, usually waiting until Friday evening, allowing me to catch bugs over the weekend before Sunday so they wouldn't interfere with my day job.
+
 ### Implement Multi-tenancy
 
 A lot of the work here was done by the [Tenancy for Laravel](https://tenancyforlaravel.com/) package.
