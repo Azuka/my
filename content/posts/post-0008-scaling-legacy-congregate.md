@@ -140,7 +140,7 @@ announced [pay per crawl](https://blog.cloudflare.com/introducing-pay-per-crawl/
 everyone was affected.
 
 Once we blocked large file access, the crawlers started to target text content and our RDS external data transfer costs
-spiked heavily given every page load pulls data from the database. LiquidWeb was able to identify abusive IPs but we
+spiked heavily as every page load pulled data from the database and we had no content cache. LiquidWeb was able to identify and block abusive IPs but we
 were playing whackamole with these, and there was always a new set when we asked. Clearly, this couldn't go on.
 
 Eric, the owner of the application asked what could be done on our side, so I sent the diagram below, along with a
@@ -541,7 +541,7 @@ and [attached certmanager issuers](https://cert-manager.io/docs/configuration/is
 ### Communication
 
 Eric sent out a few communication messages to site owners with instructions on switching DNS servers. Cloudflare limits
-the [number of inactive zones](https://community.cloudflare.com/t/stuck-on-you-have-exceeded-the-limit-for-adding-zones-please-activate-some-zones/756329] so
+the [number of inactive zones](https://community.cloudflare.com/t/stuck-on-you-have-exceeded-the-limit-for-adding-zones-please-activate-some-zones/756329) so
 communication had to go out in batches until we hit a critical mass.
 
 ### Scaling
@@ -557,7 +557,7 @@ Sadly, Nginx Unit [has been archived](https://github.com/nginx/unit), and is no 
 things about [FrankenPHP](https://frankenphp.dev/), which is supported in the
 upcoming [v4 version](https://github.com/serversideup/docker-php/releases/tag/v4.0.0-beta1) of the php images.
 
-### Monitoring
+### Observability and Monitoring
 
 All logs and traces are sent to [Grafana Cloud](https://grafana.com/products/cloud/) using the k8s-monitoring chart.
 We generate a lot of data, especially metrics and tracing, but I've been able to tune the sampling rate. Grafana has
