@@ -404,7 +404,7 @@ flowchart TD
     adminhttproutes -- routes to --> adminsvc
     app -- determines and serves client based on domain --> sitedbs
     admin -- manages client data --> admindb
-    admin -- manages dns records ----> cloudflare
+    admin -- manages dns records ----> appdomains
 ```
 
 There were a few moving pieces that would make this possible:
