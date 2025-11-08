@@ -371,11 +371,6 @@ flowchart TD
         cron1["App CronJob"]
         apphttproutes["App HTTP Routes"]
         adminhttproutes["Admin HTTP Routes"]
-        awsalb -- provisions --> nlb
-        cm -- provisions --> tls
-        svc --> app
-        adminsvc --> admin
-        lb -- routes to --> gateway
     end
     subgraph asg["Autoscaling Group"]
         nodes
@@ -405,6 +400,11 @@ flowchart TD
     app -- determines and serves client based on domain --> sitedbs
     admin -- manages client data --> admindb
     admin -- manages dns records ----> appdomains
+    awsalb -- provisions --> nlb
+    cm -- provisions --> tls
+    svc --> app
+    adminsvc --> admin
+    lb -- routes to --> gateway
 ```
 
 There were a few moving pieces that would make this possible:
